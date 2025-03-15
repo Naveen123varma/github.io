@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B Naveen Varma | Sales & Process Engineering Expert</title>
+    <style>
+        :root {
+            --primary: #1a4b84;
+            --secondary: #3686cc;
+            --accent: #ff6b00;
+            --light: #f5f7fa;
+            --dark: #333;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .hero-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            background-color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-text h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .contact-bar {
+            background-color: var(--secondary);
+            padding: 1rem 0;
+            color: white;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            position: relative;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .summary {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .summary p {
+            text-align: justify;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .achievement-list, .competency-list {
+            list-style-type: none;
+        }
+        
+        .achievement-list li, .competency-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .achievement-list li:before {
+            content: '★';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        .competency-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -13px;
+            background-color: white;
+            border: 4px solid var(--accent);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-company {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-position {
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-description ul {
+            padding-left: 1.5rem;
+        }
+        
+        .timeline-description li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .skill-tag {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        
+        .education-item, .certification-item, .training-item, .project-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .education-item:last-child, .certification-item:last-child, .training-item:last-child, .project-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .objective {
+            font-style: italic;
+            margin-top: 1rem;
+            color: var(--gray);
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+        }
+        
+        .highlight-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-right: 0.5rem;
+        }
+        
+        .highlight-text {
+            display: flex;
+            align-items: center;
+        }
+        
+        .metrics-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 2rem 0;
+        }
+        
+        .metric-item {
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        
+        .metric-label {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+        
+        .skill-category {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container hero">
+            <div class="hero-image">NV</div>
+            <div class="hero-text">
+                <h1>B Naveen Varma</h1>
+                <h2>Senior Sales Engineer & Process Expert</h2>
+            </div>
+        </div>
+    </header>
+    
+    <div class="contact-bar">
+        <div class="container contact-info">
+            <a href="tel:8971359040">📱 +91 8971359040</a>
+            <a href="mailto:nvarmaminpro@gmail.com">✉️ nvarmaminpro@gmail.com</a>
+        </div>
+    </div>
+    
+    <section id="summary">
+        <div class="container">
+            <h2 class="section-title">Professional Profile</h2>
+            <div class="summary">
+                <p>Results-driven professional with a decade of expertise in technical sales, business development, and process engineering. Specialized in mineral processing with a proven ability to manage multi-million-dollar projects and drive significant revenue growth. Combining technical knowledge with business acumen to optimize processes, enhance client relationships, and deliver measurable results across diverse industrial sectors.</p>
+                <div class="objective">
+                    <p>"Seeking a challenging role where I can leverage my expertise to drive revenue growth, improve client satisfaction, and optimize operational efficiencies while contributing strategic insight and technical knowledge to achieve company targets."</p>
+                </div>
+                
+                <div class="metrics-container">
+                    <div class="metric-item">
+                        <div class="metric-value">10+</div>
+                        <div class="metric-label">Years Experience</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">₹100Cr</div>
+                        <div class="metric-label">Portfolio Managed</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">24%</div>
+                        <div class="metric-label">Revenue Growth</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">15+</div>
+                        <div class="metric-label">Key Accounts</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="achievements">
+        <div class="container">
+            <h2 class="section-title">Key Achievements</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Business Impact</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="achievement-list">
+                            <li>Increased key account revenue by 24% through strategic upselling and relationship management</li>
+                            <li>Reduced proposal preparation & cost estimation time by 60%, improving overall response efficiency</li>
+                            <li>Implemented risk management strategies that reduced project delays by 30%</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Technical Excellence</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="achievement-list">
+                            <li>Enhanced iron ore beneficiation from 25% Fe to 56% Fe with 15% recovery through advanced process optimization</li>
+                            <li>Implemented process improvements resulting in 20% throughput enhancement and 2% increase in recovery rates</li>
+                            <li>Successfully delivered global projects across India, Middle East, and Africa, consistently meeting deadlines and budgets</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Leadership & Recognition</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="achievement-list">
+                            <li>Recognized with Silver & Gold Awards for outstanding performance in order acquisition and client satisfaction</li>
+                            <li>Successfully managed 15+ key accounts while maintaining exceptional customer service standards</li>
+                            <li>Led cross-functional teams in delivering complex technical solutions for critical client challenges</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="competencies">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Sales & Business Development</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="competency-list">
+                            <li>Strategic account management and relationship building</li>
+                            <li>Technical proposal development and presentation</li>
+                            <li>Contract negotiation and deal closure</li>
+                            <li>Market analysis and competitor benchmarking</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Technical & Engineering</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="competency-list">
+                            <li>Process optimization and simulation</li>
+                            <li>Mineral processing technology implementation</li>
+                            <li>Equipment selection and specification</li>
+                            <li>Troubleshooting and performance enhancement</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Project & Operations Management</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="competency-list">
+                            <li>Risk assessment and mitigation planning</li>
+                            <li>Six Sigma methodology application</li>
+                            <li>Cost estimation and budget management</li>
+                            <li>Cross-functional team coordination</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">December 2022 - Present</div>
+                        <div class="timeline-company">Metso Outotec India Private Limited</div>
+                        <div class="timeline-position">Senior Sales Engineer - Key Account Management</div>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Spearhead sales and business development for a ₹100 crore portfolio across Pellet, Beneficiation, Sinter, and Material Handling plants</li>
+                                <li>Drive RFQ processes from initial assessment through contract negotiation to successful project finalization</li>
+                                <li>Implement comprehensive risk management strategies that have reduced project delays by 30%</li>
+                                <li>Orchestrate collaboration among procurement, operations, and planning teams to ensure seamless project delivery</li>
+                                <li>Cultivate and maintain strategic relationships with key stakeholders, resulting in significant repeat business opportunities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2019 - December 2022</div>
+                        <div class="timeline-company">FLSmidth Pvt. Ltd.</div>
+                        <div class="timeline-position">Senior Lead Engineer - Proposal Management</div>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Led global and domestic EP/EPC projects, developing optimal engineering concepts and comprehensive technical documentation</li>
+                                <li>Performed advanced design calculations, process simulations, and equipment selection to meet complex client specifications</li>
+                                <li>Conducted detailed material requirement analysis and provided precise cost estimations for project components</li>
+                                <li>Analyzed intricate client specifications to ensure all technical requirements were incorporated into project proposals</li>
+                                <li>Reduced proposal preparation time by 60% while maintaining quality through process standardization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">November 2018 - April 2019</div>
+                        <div class="timeline-company">Amalgam Steels Pvt. Ltd.</div>
+                        <div class="timeline-position">Senior Process Engineer</div>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Directed process engineering operations and implemented controls to optimize production efficiency</li>
+                                <li>Developed and implemented process improvements that enhanced product quality and operational reliability</li>
+                                <li>Created detailed technical reports for management that guided strategic decision-making</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2017 - October 2018</div>
+                        <div class="timeline-company">NSL Mining Resources India Pvt. Ltd.</div>
+                        <div class="timeline-position">Process Engineer</div>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Innovated process solutions that significantly improved product yield and recovery metrics</li>
+                                <li>Conducted complex process simulations to identify optimization opportunities and resolve efficiency bottlenecks</li>
+                                <li>Developed comprehensive Standard Operating Procedures (SOPs) that enhanced operational consistency</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">June 2015 - April 2017</div>
+                        <div class="timeline-company">Creative Engineers</div>
+                        <div class="timeline-position">Process Engineer</div>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Executed sales and marketing initiatives for technical equipment and engineering services</li>
+                                <li>Played a key role in commissioning specialized equipment and process plants across multiple sites</li>
+                                <li>Provided technical consultation to clients during equipment selection and installation phases</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            
+            <div class="skill-category">
+                <h3>Technical Skills</h3>
+                <div class="skills-container">
+                    <span class="skill-tag">Process Engineering</span>
+                    <span class="skill-tag">Mineral Processing</span>
+                    <span class="skill-tag">Process Optimization</span>
+                    <span class="skill-tag">Process Simulation</span>
+                    <span class="skill-tag">Equipment Selection</span>
+                    <span class="skill-tag">Troubleshooting</span>
+                    <span class="skill-tag">Technical Documentation</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Business Skills</h3>
+                <div class="skills-container">
+                    <span class="skill-tag">Strategic Sales</span>
+                    <span class="skill-tag">Business Development</span>
+                    <span class="skill-tag">Account Management</span>
+                    <span class="skill-tag">Proposal Management</span>
+                    <span class="skill-tag">Cost Estimation</span>
+                    <span class="skill-tag">Contract Negotiation</span>
+                    <span class="skill-tag">Client Relationship</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Project Management</h3>
+                <div class="skills-container">
+                    <span class="skill-tag">Six Sigma</span>
+                    <span class="skill-tag">Risk Management</span>
+                    <span class="skill-tag">Stakeholder Management</span>
+                    <span class="skill-tag">Project Planning</span>
+                    <span class="skill-tag">Scrum</span>
+                    <span class="skill-tag">Continuous Improvement</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Digital Skills</h3>
+                <div class="skills-container">
+                    <span class="skill-tag">MS Office Suite</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">Data Analysis</span>
+                    <span class="skill-tag">Process Simulation Software</span>
+                    <span class="skill-tag">Statistical Analysis</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education & Professional Development</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Academic Qualifications</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="education-item">
+                            <h3 class="card-title">MBA – Marketing (In Progress)</h3>
+                            <p><strong>Institution:</strong> Andhra University, Andhra Pradesh</p>
+                            <p><strong>Expected Completion:</strong> 2026</p>
+                            <p><strong>Focus Areas:</strong> Strategic Marketing, Business Analytics, Consumer Behavior</p>
+                        </div>
+                        
+                        <div class="education-item">
+                            <h3 class="card-title">MTech – Mineral Processing</h3>
+                            <p><strong>Institution:</strong> VSK University, Karnataka</p>
+                            <p><strong>Graduated:</strong> 2015</p>
+                            <p><strong>Focus Areas:</strong> Advanced Mineral Processing Techniques, Process Design, Optimization Methodologies</p>
+                        </div>
+                        
+                        <div class="education-item">
+                            <h3 class="card-title">BSc – Mineral Processing</h3>
+                            <p><strong>Institution:</strong> Andhra University, Andhra Pradesh</p>
+                            <p><strong>Graduated:</strong> 2012</p>
+                            <p><strong>Focus Areas:</strong> Foundational Mineral Processing, Engineering Principles, Materials Science</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Professional Certifications</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="certification-item">
+                            <h4>Six Sigma Green Belt Certification</h4>
+                            <p><strong>Issuing Organization:</strong> Indian Statistical Institute (ISI), Hyderabad</p>
+                            <p><strong>Key Skills:</strong> Process Improvement, Statistical Analysis, DMAIC Methodology</p>
+                        </div>
+                        
+                        <div class="certification-item">
+                            <h4>Project Management Certification</h4>
+                            <p><strong>Issuing Organization:</strong> IIT Delhi</p>
+                            <p><strong>Key Skills:</strong> Project Planning, Risk Management, Resource Allocation</p>
+                        </div>
+                        
+                        <div class="certification-item">
+                            <h4>Foundations of Project Management</h4>
+                            <p><strong>Issuing Organization:</strong> Google</p>
+                            <p><strong>Key Skills:</strong> Agile Methodologies, Project Lifecycle Management, Stakeholder Communication</p>
+                        </div>
+                        
+                        <div class="certification-item">
+                            <h4>Developing Customer Connect</h4>
+                            <p><strong>Issuing Organization:</strong> MDI Gurgaon</p>
+                            <p><strong>Key Skills:</strong> Client Relationship Management, Needs Assessment, Solution Selling</p>
+                        </div>
+                        
+                        <div class="certification-item">
+                            <h4>Scrum Fundamentals</h4>
+                            <p><strong>Issuing Organization:</strong> Scrum.org</p>
+                            <p><strong>Key Skills:</strong> Agile Project Management, Sprint Planning, Team Collaboration</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="specialized-training">
+        <div class="container">
+            <h2 class="section-title">Specialized Technical Training</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div class="training-item">
+                        <h3 class="card-title">Sinter Processing: Product Competent Professional (PCP)</h3>
+                        <p><strong>Organization:</strong> Bhilai Steel Plant (SAIL)</p>
+                        <p><strong>Key Focus Areas:</strong> Advanced sinter production technologies, quality control methodologies, and process optimization techniques for enhancing sintering efficiency and product quality</p>
+                    </div>
+                    
+                    <div class="training-item">
+                        <h3 class="card-title">Process Simulation Software Mastery</h3>
+                        <p><strong>Organization:</strong> FLSmidth</p>
+                        <p><strong>Software:</strong> Plantsmidth & Cycad Process Simulation Software</p>
+                        <p><strong>Key Focus Areas:</strong> Advanced simulation techniques, process flow modeling, parameter optimization, and predictive analysis for mineral processing applications</p>
+                    </div>
+                    
+                    <div class="training-item">
+                        <h3 class="card-title">FLSmidth Product Technical Training</h3>
+                        <p><strong>Organization:</strong> FLSmidth</p>
+                        <p><strong>Key Focus Areas:</strong> Comprehensive training on mineral processing equipment, material handling systems, fabrication processes, casting techniques, stackers & reclaimers, and ship loading/unloading technologies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Signature Projects</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Iron Ore Beneficiation Plant Development</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="project-item">
+                            <p><strong>Client:</strong> Star Minerals</p>
+                            <p><strong>Capacity:</strong> 100 TPH Iron Ore Processing</p>
+                            <p><strong>Duration:</strong> 6 Months (2017)</p>
+                            <p><strong>Location:</strong> Hospet, Ballary, Karnataka</p>
+                            <p><strong>Scope:</strong> Flowsheet development, equipment selection, process optimization, and full plant commissioning</p>
+                            <p><strong>Outcome:</strong> Successfully delivered a fully operational beneficiation plant that met all production targets and quality parameters</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Advanced Beneficiation Study for National Mining Corporation</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="project-item">
+                            <p><strong>Client:</strong> National Mineral Development Corporation (NMDC)</p>
+                            <p><strong>Scope:</strong> Bench scale and Pilot Scale Beneficiation Studies</p>
+                            <p><strong>Material:</strong> Iron Ore Fines from Bacheli, Chhattisgarh</p>
+                            <p><strong>Duration:</strong> 6 Months (2015)</p>
+                            <p><strong>Location:</strong> Hyderabad, Telangana</p>
+                            <p><strong>Outcome:</strong> Developed optimal beneficiation strategies that significantly improved ore grade and recovery metrics, providing NMDC with valuable data for future plant design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
